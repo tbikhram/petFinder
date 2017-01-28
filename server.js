@@ -1,24 +1,33 @@
 var express = require("express");
 var bodyParser = require ("body-Parser");
 var methodOverride = require ("method-override");
+
+//set up express app
+var app = express();
 var PORT = process.env.PORT || 3000;
 
-// app.use(express.static(__dirname + "/assets"));
+// requiring our models for sycncing
 
-app.use(bodyParser.urlencoded({ extended: false}));
+var db = require("./models");
 
-app.use(methodOverride("_method"));
-var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-var routes = require("./controllers/petFinderController.js");
 
-app.use("/", routes);
-app.use("/update", routes);
-app.use("/create", routes);
+//static directory
+app.use(express.static("./public"));
 
-app.listen(PORT, function(){
-	console.log("Listening on port:%s", PORT);
+//routes
+
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+//syncing the sequelize models and then starting our express app
+db.sequelize.sync({ force: true }).then(function(){
+	app.listen(PORT, function() {
+		console.log("App listening on PORT " + PORT);
+	});
 });

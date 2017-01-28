@@ -14,8 +14,8 @@ module.exports = function(sequelize, DataTypes){
 			len: [1]
 		},
 		catagory: {
-			type: DataTypes.STRING
-			defaultValue: "Personal"
+			type: DataTypes.STRING,
+			defaultValue: false
 		}
 
 	});
