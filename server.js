@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 3000;
 // requiring our models for sycncing
 
 var db = require("./models");
-//new comment from lou
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
