@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--/-->
 <html>
 <head>
 	<title>Pet Finder Landing </title>
@@ -6,23 +6,25 @@
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/landingStyle.css">
 </head>
-	<body>
+	<body background="assets/images/dog.jpg">
 		
 		<!--{{{body}}}-->
 		<div class="container">
-		
-			<div class="col-xs-3" class="btn-group" id="buttons"role="group" aria-label="...">
-	 			 <button type="button" class="btn btn-info">LOST</button>
-	 			 <button type="button" class="btn btn-info">FOUND</button>
-	 			 <button type="button" class="btn btn-info">LOG IN</button>
+			<div class="row">
+				<div class="col-md-6" class="btn-group" id="buttons" role="group" aria-label="...">
+		 			 <a href="/lost"><button type="button" class="btn btn-info">LOST</button></a>
+		 			<a href="/found"><button type="button" class="btn btn-info">FOUND</button></a>
+		 			 <a href="login"><button type="button" class="btn btn-info">LOG IN</button></a>
 
-			</div>
-			
-			<!--<div>
-				<img src="assets/images/dog.jpg">
-			</div>-->
-
+				</div>
+			</div>			
 		</div>
+		<footer class="footer">
+		      <div class="container">
+		        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+		      </div>
+		 </footer>
+
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	</body>
