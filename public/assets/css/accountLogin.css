@@ -40,6 +40,9 @@
   }
 }
 
+h1{
+  color: white;
+}
 .inputAccountContainer {
     padding-top: 75px;
     }
@@ -66,4 +69,8 @@
 
 .pull-right{
   float: right !important;
+}
+
+#newPet{
+  padding-top: 25px;
 }
