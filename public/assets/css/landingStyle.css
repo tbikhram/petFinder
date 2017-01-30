@@ -1,0 +1,14 @@
+body {
+	background-image: url("dog.jpg");
+	background-color: black;
+}
+
+.btn-group{
+	padding-top: 100px;
+	margin-top: 100px;
+	padding-left: 100px;
+}
+
+#buttons{
+	padding-left: 100px;
+}
