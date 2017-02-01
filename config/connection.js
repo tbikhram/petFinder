@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("petFinder_db", "root", "55capone", {
+var sequelize = new Sequelize("petFinder_db", "root", "password", {
 	host:"localhost",
 	dialect:"mysql",
 	pool:{

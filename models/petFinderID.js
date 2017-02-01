@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+
  var petId = sequelize.define("petId", {
    petName: {
      type: DataTypes.STRING,
@@ -37,3 +38,4 @@ module.exports = function(sequelize, DataTypes) {
    });
  return petId;
 };
+

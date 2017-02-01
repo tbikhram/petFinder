@@ -9,6 +9,7 @@ var db = require ("../models");
 //petFinder = user
 module.exports = function(app){
 
+
 //foundlist page
 	app.get('/found', function(request, response){
 		db.petFindeID.findAll({
@@ -69,7 +70,7 @@ app.get('/account', function(request, response){
 	});
 
 	//GET route to get single user
-	app.get("petFinder/:id", function(req, res){
+	app.get("/petFinder/:id", function(req, res){
 		db.petFinder.findOne({
 			where: {
 				id: req.params.id
@@ -80,7 +81,7 @@ app.get('/account', function(request, response){
 	});
 
 	//POST route for saving a new user
-	app.post("petFinder", function(req, res){
+	app.post("/petFinder", function(req, res){
 		db.petFinder.create(req.body).then(function(dbpetFinder){
 			res.json(dbpetFinder);
 		});
@@ -88,7 +89,7 @@ app.get('/account', function(request, response){
 
 	//PUT route for updating a new user
 
-	app.put("petFinder", function(req, res) {
+	app.put("/petFinder", function(req, res) {
 		db.petFinder.update(
 			req.body,
 			{

@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, DataTypes){
 	 var petFinder = sequelize.define("petFinder",{
 
@@ -46,3 +47,4 @@ module.exports = function(sequelize, DataTypes){
     
     return petFinder;
 };
+
