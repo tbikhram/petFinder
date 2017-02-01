@@ -11,48 +11,56 @@ module.exports = function(app){
 
 
 //foundlist page
+	// app.get('/found', function(request, response){
+	// 	db.petFindeID.findAll({
+	// 		where: {
+	// 			found: true
+	// 		}
+	// 	}).then(function(foundPets){
+	// 		db.petFindeID.findAll({
+	// 			where: {
+	// 				found: true
+	// 			}
+	// 		}).then(function(foundPets){
+	// 			var handlebarObj = {
+	// 				foundPets: foundPets
+	// 			}
+	// 			response.render('foundList',foundPets);		
+	// 		})
+	// 	})
+	// })
+
+//foundlist page
 	app.get('/found', function(request, response){
-		db.petFindeID.findAll({
+		db.petID.findAll({
 			where: {
 				found: true
 			}
 		}).then(function(foundPets){
-			db.petFindeID.findAll({
-				where: {
-					found: true
-				}
-			}).then(function(foundPets){
-				var handlebarObj = {
-					foundPets: foundPets
-				}
-				response.render('foundList',foundPets);		
-			})
+			var handlebarObj = {
+				foundPets: foundPets
+			}
+			response.render('foundlist', foundPets);
 		})
 	})
+
 //lostlist page
-app.get('/post', function(request, response){
-		db.petFindeID.findAll({
+	app.get('/post', function(request, response){
+		db.petID.findAll({
 			where: {
 				found: false
 			}
 		}).then(function(foundPets){
 			var handlebarObj = {
-				foundPets: foundPets
+				lostPets: foundPets
 			}
 			response.render('lostList',foundPets);
 		})
 	})
 
 //account page
-
-app.get('/account', function(request, response){
-
-})
-
-
-
-	app.get('/users/:id', function(request, response) {
-		db.Users.findOne({
+	app.get('/account/:id', function(request, response) {
+		db.petFinder.findOne({
 			id: request.params.id
 		}).then(function(user) {
 			var handlebarObj = {
@@ -63,22 +71,22 @@ app.get('/account', function(request, response){
 	});
 
 	//GET route to get all users
-	app.get("/petFinder", function(req, res){
-		db.petFinder.findAll({}).then(function(dbpetFinder){
-			res.json(dbpetFinder);
-		});
-	});
+	// app.get("/petFinder", function(req, res){
+	// 	db.petFinder.findAll({}).then(function(dbpetFinder){
+	// 		res.json(dbpetFinder);
+	// 	});
+	// });
 
 	//GET route to get single user
-	app.get("/petFinder/:id", function(req, res){
-		db.petFinder.findOne({
-			where: {
-				id: req.params.id
-			}
-		}).then(function(dbpetFinder){
-			res.json(dbpetFinder);
-		});
-	});
+	// app.get("/petFinder/:id", function(req, res){
+	// 	db.petFinder.findOne({
+	// 		where: {
+	// 			id: req.params.id
+	// 		}
+	// 	}).then(function(dbpetFinder){
+	// 		res.json(dbpetFinder);
+	// 	});
+	// });
 
 	//POST route for saving a new user
 	app.post("/petFinder", function(req, res){
