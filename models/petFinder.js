@@ -1,23 +1,45 @@
 module.exports = function(sequelize, DataTypes){
-	var petFinder = sequelize.define("petFinder",{
+	var userLoginTable = sequelize.define("petFinder",{
 
-		title: {
+		userName: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate:{
 				len:[1]
 			}
 		},
-		body: {
+		email: {
 			type: DataTypes.TEXT,
 			allowNull: false,
-			len: [1]
+			validate:{
+			len: [1]	
+			}
 		},
-		catagory: {
+		password: {
 			type: DataTypes.STRING,
-			defaultValue: false
+			allowNull: false,
+			validate:{
+			len: [5]	
+			}
+		},
+		zipcode_user: {
+			type: DataTypes.INTEGER, 
+			allowNull: false,
+			validate: {
+			len:[5]
 		}
+		}, 
+		petID:{
+			type: DataTypes.STRING,
+	      	allowNull: false,
+	      	validate: {
+	        len: [1]
+      	}	
+      },
 
-	});
-	return petFinder;
+
+});
+
+	return userLoginTable;
 };
+
