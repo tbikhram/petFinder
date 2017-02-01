@@ -1,4 +1,6 @@
-	<!--{{{ body }}}-->
+
+<link rel="stylesheet" href="assets/css/accountLogin.css">
+
 			<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,11 +42,12 @@
 <!--END OF NAVBAR-->
 
 	<div class="container">
-		<div class="row" action="petFinder/create" method="POST">
+		<div class="row">
 			<div class="col-md-5">
 				<div class="pull-right">
 					<div class="form-group">
 						<div class="inputAccountContainer">
+						<form action="petFinder/update/{{this.id}}?_method=PUT" method="POST">
 							<!--<div class="panel panel-info">-->
 							<h1>Hello There..</h1>
 							<!--FULL NAME-->
@@ -60,7 +63,7 @@
 							<!--PASSWORD-->
 								<div class="input-group" id="newAccountPW">
 						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
-						  			<input type="text" name="password"class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+						  			<input type="text" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 								</div>
 
 								<!--ZIPCODE-->

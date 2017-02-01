@@ -13,6 +13,10 @@ module.exports = function(sequelize, DataTypes) {
      allowNull: false,
      len: [1]
    },
+   petPic: {
+     type: DataTypes.BLOB,
+     allowNull: false,
+   },
    animaltype: {
      type: DataTypes.BOOLEAN,
      allowNull: false,

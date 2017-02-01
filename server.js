@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require ("body-Parser");
 var methodOverride = require ("method-override");
+var exphbs = require('express-handlebars');
 //var Drift = require("drift-zoom");//new lib
 
 //set up express app
@@ -21,13 +22,17 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 //static directory
 app.use(express.static("./public"));
 
+
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 //routes
 
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 //syncing the sequelize models and then starting our express app
-<<<<<<< HEAD
+
 db.sequelize.sync({ force: true }).then(function(){
 	app.listen(PORT, function() {
 		console.log("App listening on PORT " + PORT);
@@ -46,10 +51,3 @@ db.sequelize.sync({ force: true }).then(function(){
 
 
 
-=======
-db.sequelize.sync({ force: true }).then(function() {
- app.listen(PORT, function() {
-   console.log("App listening on PORT " + PORT);
- });
-});
->>>>>>> 1817ee023020047d104ac4f9a12bccf1f1959cec

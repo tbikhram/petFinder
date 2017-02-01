@@ -1,7 +1,5 @@
 
-body {
-	background-color: lightblue;
-}
+
 
 .container{
 	text-align: center;
@@ -10,4 +8,7 @@ body {
 
 .btn-group{
 	padding-top: 25px;
+}
+body{
+	background-image: url("../images/sos.png");
 }

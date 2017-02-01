@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="assets/css/accountLogin.css">
+
 <nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,60 +42,62 @@
 <!--END OF NAVBAR-->
 <!--SURVEY-->
 <div class="container" id="newPet">
+	<form action="petFinderId/update/{{this.id}}?_method=PUT" method="POST">
 	<div class="row">
 		<div class="col-md-11">
 			<div class="pull-right">
 				<div class="form-group">
 				<h2>Tell Us Some Details:</h2>
 				  <label for="usr">Pet Name (If Tag):</label>
-				  <input type="text" class="form-control" id="usr" placeholder="Spot">
+				  <input type="text" class="form-control" id="usr" placeholder="Spot" name="petName">
 				</div>
 
 				<div class="form-group">
 				  <label for="usr">Breed (If Tag):</label>
-				  <input type="text" class="form-control" id="usr" placeholder="French Bulldog">
+				  <input type="text" class="form-control" id="usr" placeholder="French Bulldog" name="breed">
 				</div>
 
 				<form action="demo_form.asp"> <!--UPLOAD IMAGE-->
 				  <label for="usr">Choose an Image:</label>
-				  <input type="file" name="pic" accept="image/*">
+				  <input type="file" name="petPic" accept="image/*">
 				  <!--<input type="submit">-->
 				</form>
 
 				<label for="usr">The Animal is a:</label>
 				<div class="checkbox-inline">
 				  
-				  <label><input type="checkbox" value="">Dog</label>
+				  <label><input type="checkbox" value="1" name="animaltype">Dog</label>
 				</div>
 
 				<div class="checkbox-inline">
-				  <label><input type="checkbox" value="">Cat</label>
+				  <label><input type="checkbox" value="0" name="animaltype">Cat</label>
 				</div></br>
 
 				<!--found/lost input-->
 				<label for="usr">I :</label>
 				<div class="checkbox-inline">
 				  
-				  <label><input type="checkbox" value="1">Found a Pet</label>
+				  <label><input type="checkbox" value="1" name="foundLost">Found a Pet</label>
 				</div>
 
 				<div class="checkbox-inline">
-				  <label><input type="checkbox" value="0">Lost a Pet</label>
+				  <label><input type="checkbox" name="" value="0" name="foundLost">Lost a Pet</label>
 				</div>
 
 				<div class="form-group">
 				  <label for="usr">Zipcode Found:</label>
-				  <input type="text" class="form-control" id="usr" placeholder="90024">
+				  <input type="text" class="form-control" id="usr" name="zipcode_pet" placeholder="90024">
 				</div>
 
 				<!--comment box-->
 				<div class="form-group">
 				  <label for="comment">Comment:</label>
-				  <textarea class="form-control" rows="5" id="comment" placeholder="Pet condition"></textarea>
+				  <textarea class="form-control" rows="5" id="comment" name="comments" placeholder="Pet condition"></textarea>
 				</div>
 				
 			
 				<div class="btn-group">
+
 			  		<a href="/account"><button type="button" class="btn btn-primary">Post Pet</button></a>
 				</div>
 			</div>
