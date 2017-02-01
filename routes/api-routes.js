@@ -9,8 +9,60 @@ var db = require ("../models");
 //petFinder = user
 module.exports = function(app){
 
+//foundlist page
+	app.get('/found', function(request, response){
+		db.petFindeID.findAll({
+			where: {
+				found: true
+			}
+		}).then(function(foundPets){
+			db.petFindeID.findAll({
+				where: {
+					found: true
+				}
+			}).then(function(foundPets){
+				var handlebarObj = {
+					foundPets: foundPets
+				}
+				response.render('foundList',foundPets);		
+			})
+		})
+	})
+//lostlist page
+app.get('/post', function(request, response){
+		db.petFindeID.findAll({
+			where: {
+				found: false
+			}
+		}).then(function(foundPets){
+			var handlebarObj = {
+				foundPets: foundPets
+			}
+			response.render('lostList',foundPets);
+		})
+	})
+
+//account page
+
+app.get('/account', function(request, response){
+
+})
+
+
+
+	app.get('/users/:id', function(request, response) {
+		db.Users.findOne({
+			id: request.params.id
+		}).then(function(user) {
+			var handlebarObj = {
+				user: user
+			}
+			res.render('/profile', handlebarObj);
+		})
+	});
+
 	//GET route to get all users
-	app.get("petFinder", function(req, res){
+	app.get("/petFinder", function(req, res){
 		db.petFinder.findAll({}).then(function(dbpetFinder){
 			res.json(dbpetFinder);
 		});

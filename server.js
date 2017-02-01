@@ -23,7 +23,7 @@ app.use(express.static("./public"));
 
 //routes
 
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 //syncing the sequelize models and then starting our express app

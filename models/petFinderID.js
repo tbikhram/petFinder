@@ -13,10 +13,16 @@ module.exports = function(sequelize, DataTypes) {
      len: [1]
    },
    animaltype: {
-     type: DataTypes.TEXT,
+     type: DataTypes.BOOLEAN,
      allowNull: false,
      len: [1]
    },
+   foundLost: {
+     type: DataTypes.BOOLEAN,
+     allowNull: false,
+     len: [1]
+   },
+
    comments: {
      type: DataTypes.TEXT,
    },
@@ -27,9 +33,7 @@ module.exports = function(sequelize, DataTypes) {
      len:[5]
    },
    },
-   created_at: {
-    type: DataTypes.DATE 
-     },
+   
    });
  return petId;
 };
