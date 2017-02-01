@@ -1,5 +1,7 @@
 var path = require ("path");
 
+//SWITCH ROUTES TO HANDLEBARS
+
 module.exports = function(app){
 
 	//home page

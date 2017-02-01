@@ -15,11 +15,11 @@ method-override
 body-parser
 
 ##TODO:
-1) background images for non video pages -fe tonight
+1) background images for non video pages -fe tonight DONE
 2) update menu bar -fe DONE
-3) log in validation (passport.js) -fe
+3) log in validation (passport.js) -fe mo
 4) api-routes -be tonght
 5) push data to account page, lost list, found list and menu bar. tonight
 6) amburger.js -fe
 7) if/then statements at post button/contact buttons to check if logged in
-8) background pictures for all pages.
+8) background pictures for all pages. DONE

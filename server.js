@@ -32,3 +32,16 @@ db.sequelize.sync({ force: true }).then(function(){
 		console.log("App listening on PORT " + PORT);
 	});
 });
+
+//1) how to incorporate multiple handlebars to main.handlbars while requiiing multinple csr
+//2) how to establish both tables and update to handlebars.
+//3) how to include background photo's in different main.handlebars.
+//3) push/pull on github
+//4)
+
+
+
+
+
+
+
