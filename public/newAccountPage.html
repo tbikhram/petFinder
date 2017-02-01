@@ -1,0 +1,145 @@
+<!DOCTYPE html> <!--newaccount-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--<link rel="stylesheet" href="./assets/css/burger_style.css">-->
+	<!--BOOTSTRAP-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="assets/css/accountLogin.css">
+		<title>SpotFinder</title>
+	</head>
+	<body>
+			<!--{{{ body }}}-->
+					<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/found">SpotFinder</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="/found">Found<span class="sr-only">(current)</span></a></li>
+	        <li><a href="/lost">Lost</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	      <form class="navbar-form navbar-right">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/login">Log In</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+<!--END OF NAVBAR-->
+<!--END OF NAVBAR-->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="pull-right">
+					<div class="form-group">
+						<div class="inputAccountContainer">
+							<!--<div class="panel panel-info">-->
+							<h1>Hello There..</h1>
+							<!--FULL NAME-->
+								<div class="input-group" id="newAccountFN">
+						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+						  			<input type="text" class="form-control" placeholder="first name" aria-describedby="basic-addon1">
+								</div>
+							<!--EMAIL-->
+								<div class="input-group" id="newAccountEmail">
+						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+						  			<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+								</div>
+							<!--PASSWORD-->
+								<div class="input-group" id="newAccountPW">
+						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
+						  			<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+								</div>
+									
+								<!--NEW ACCOUNT BUTTON-->
+								<div class="btn-group">
+			  						<button type="button" class="btn btn-primary">Create New Account</button>
+								</div>
+								<!--END OF  ACCOUNT BUTTON-->
+								
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--END OF INPUT ACCOUNT CONTAINER-->
+
+<!--PROGRESS BAR-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="pull-right">
+					<div class="progress">
+			  			<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+			    			<span class="sr-only">20% Complete</span>
+			  			</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<!--END OF PROGRESS BAR-->
+<!--ALERT-->
+<div class="alert alert-danger alert-dismissable" id="alert">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Warning!</strong> Indicates a warning that might need attention.
+</div>
+
+<!--END OF ALERT-->
+
+<!--BACKGROUND VIDEO-->
+
+	<div class="fullscreen-bg">
+	    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+	        <!--<source src="video/big_buck_bunny.webm" type="video/webm">-->
+	        <source src="assets/images/Good_dog.mp4" type="video/mp4">
+	        <!--<source src="video/big_buck_bunny.ogv" type="video/ogg">-->
+	    </video>
+	</div>
+<!--END OF BACKGROUND VIDEO-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</body>
+</html>

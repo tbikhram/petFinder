@@ -1,0 +1,17 @@
+
+h1{
+	text-align: center;
+	padding-top: 25px;
+}
+.loginContainer {
+	padding-top: 60px;
+}
+#loginEmail {
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#loginPW {
+	padding-bottom: 30px;
+}
+
