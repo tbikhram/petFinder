@@ -42,7 +42,7 @@ module.exports = function(app){
 
 //foundlist page
 	app.get('/found', function(request, response){
-		db.petID.findAll({
+		db.petId.findAll({
 			where: {
 				found: true
 			}
@@ -50,13 +50,13 @@ module.exports = function(app){
 			var handlebarObj = {
 				foundPets: foundPets
 			}
-			response.render('foundlist', foundPets);
+			response.render('foundList', foundPets);
 		})
 	})
 
 //lostlist page
 	app.get('/lost', function(request, response){
-		db.petID.findAll({
+		db.petId.findAll({
 			where: {
 				found: false
 			}
