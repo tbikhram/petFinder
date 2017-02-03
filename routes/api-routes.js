@@ -30,6 +30,14 @@ module.exports = function(app){
 	// 	})
 	// })
 
+	//login
+
+	app.post('/login',
+  passport.authenticate('local', { successRedirect: 'account',
+                                   failureRedirect: '/login',
+                                   failureFlash: true })
+);
+
 //foundlist page
 	app.get('/found', function(request, response){
 		db.petID.findAll({
@@ -58,7 +66,7 @@ module.exports = function(app){
 		})
 	})
 
-//account page
+//account page ?????
 	app.get('/account/:id', function(request, response) {
 		db.petFinder.findOne({
 			id: request.params.id
@@ -68,6 +76,36 @@ module.exports = function(app){
 			}
 			res.render('/profile', handlebarObj);
 		})
+	});
+
+
+	// post to account user db "petFinder" DOES NOT INCLUDE PETID
+
+	app.post('newAccountPage/create', function(request, response){
+		db.petFinder.create({
+			userName: request.body.userName,
+			email: request.body.email,
+			password: request.body.password,
+			zipcode_user: request.body.zipcode_user,
+		}).then(function(res){
+			response.redirect('accountPage');
+		});
+	});
+
+	//put to account user db "petFinder" DOES NOT INCLUDE PETID
+	app.put('newAccountPage/update/:id', function(request, response){
+		db.petFinder.update({
+			userName: request.body.userName,
+			email: request.body.email,
+			password: request.body.password,
+			zipcode_user: request.body.zipcode_user,
+		}, {
+			where:{
+				id: request.params.id
+			}
+		}).then(function(res){
+			response.redirect('accountPage');
+		});
 	});
 
 	//GET route to get all users
