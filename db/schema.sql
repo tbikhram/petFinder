@@ -1,1 +1,1 @@
-CREATE DATABASE petFinder_db;
+CREATE DATABASE spotFinder_db;

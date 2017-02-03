@@ -30,9 +30,6 @@ module.exports = function(sequelize, DataTypes){
             len:[5]
         }
         },
-        created_at: {
-		type: DataTypes.DATE 
-		 },
         petID:{
             type: DataTypes.STRING,
               allowNull: false,
@@ -42,9 +39,17 @@ module.exports = function(sequelize, DataTypes){
      },
      
 
-})
+},
 
-    
-    return petFinder;
+    {
+        classMethods: {
+            associate: function(models){
+                petFinder.hasMany(models.petId);
+            }
+        }
+    });
+
+     return petFinder;
+
 };
 

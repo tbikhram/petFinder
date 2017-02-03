@@ -39,6 +39,20 @@ module.exports = function(sequelize, DataTypes) {
    },
    },
    
+   },
+   {
+
+   classMethods: {
+    associate: function(models){
+      petId.belongsTo(models.petFinder,
+      {
+        onDelete: "cascade",
+        foreignKey: {
+          allowNull: false
+        }
+        });
+      }
+    }
    });
  return petId;
 };
