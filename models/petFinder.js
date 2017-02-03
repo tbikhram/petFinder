@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Author = sequelize.define("Author", {
+  var Authors = sequelize.define("Authors", {
 
     userName: {
       type: DataTypes.STRING,
@@ -44,9 +44,9 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           // Associating Author with Posts
-          Author.hasMany(models.Post);
+          Authors.hasMany(models.Posts);
         }
       }
     });
-  return Author;
+  return Authors;
 };
