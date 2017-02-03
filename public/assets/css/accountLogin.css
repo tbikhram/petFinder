@@ -40,6 +40,11 @@
   }
 }
 
+body {
+  text-shadow: .5px 0px #d6d7d8;
+  background-image: url("../images/congruent_pentagon.png");
+}
+
 h1{
   color: white;
 }
@@ -53,6 +58,10 @@ h1{
 
 #newAccountEmail {
     padding-bottom: 20px;
+}
+
+#newAccountZip {
+  padding-bottom: 20px;
 }
 
 #newAccountPW {
@@ -73,4 +82,5 @@ h1{
 
 #newPet{
   padding-top: 25px;
+  padding-left: -20px;
 }

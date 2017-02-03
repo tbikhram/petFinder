@@ -1,52 +1,61 @@
+<<<<<<< HEAD
 module.exports = function(sequelize, DataTypes) {
   var Authors = sequelize.define("Authors", {
+=======
+>>>>>>> 765bfea3afc7c0d1f785788dfa1867997711b368
 
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate:{
-        len:[1]
-      }
-    },
-    email: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate:{
-      len: [1]  
-      }
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate:{
-      len: [5]  
-      }
-    },
-    zipcode_user: {
-      type: DataTypes.INTEGER, 
-      allowNull: false,
-      validate: {
-      len:[5]
-    }
-  }, 
-    petID:{
-      type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-          len: [1]
-        } 
-      }
-    },
-  // Here we'll pass a second "classMethods" object into the define method
-  // This is for any additional configuration we want to give our models
-    {
-      // We're saying that we want our Author to have Posts
-      classMethods: {
-        associate: function(models) {
-          // Associating Author with Posts
-          Authors.hasMany(models.Posts);
+module.exports = function(sequelize, DataTypes){
+	 var petFinder = sequelize.define("petFinder",{
+
+        userName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate:{
+                len:[1]
+            }
+        },
+        email: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate:{
+            len: [1]    
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate:{
+            len: [5]    
+            }
+        },
+        zipcode_user: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+            len:[5]
         }
-      }
+        },
+        petID:{
+            type: DataTypes.STRING,
+              allowNull: false,
+              validate: {
+            len: [1]
+         }    
+     },
+     
+
+},
+
+    {
+
+        classMethods: {
+            associate: function(models){
+                petFinder.hasMany(models.petId);
+            }
+        }
     });
-  return Authors;
+
+
+     return petFinder;
 };
+
