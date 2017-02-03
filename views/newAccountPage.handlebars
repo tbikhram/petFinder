@@ -1,16 +1,6 @@
-<!DOCTYPE html> <!--newaccount-->
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<!--<link rel="stylesheet" href="./assets/css/burger_style.css">-->
-	<!--BOOTSTRAP-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="assets/css/accountLogin.css">
-		<title>SpotFinder</title>
-	</head>
-	<body background="assets/images/congruent_pentagon.png">
-			<!--{{{ body }}}-->
+<link rel="stylesheet" href="assets/css/accountLogin.css">
+
 			<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,6 +39,7 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 <!--END OF NAVBAR-->
+<!--END OF NAVBAR-->
 
 	<div class="container">
 		<div class="row">
@@ -56,28 +47,29 @@
 				<div class="pull-right">
 					<div class="form-group">
 						<div class="inputAccountContainer">
+						<form action="petFinder/update/{{this.id}}?_method=PUT" method="POST">
 							<!--<div class="panel panel-info">-->
 							<h1>Hello There..</h1>
 							<!--FULL NAME-->
 								<div class="input-group" id="newAccountFN">
 						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-						  			<input type="text" class="form-control" placeholder="first name" aria-describedby="basic-addon1">
+						  			<input type="text" name="userName" class="form-control" placeholder="first name" aria-describedby="basic-addon1">
 								</div>
 							<!--EMAIL-->
 								<div class="input-group" id="newAccountEmail">
 						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-						  			<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+						  			<input type="text"  name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
 								</div>
 							<!--PASSWORD-->
 								<div class="input-group" id="newAccountPW">
 						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></span>
-						  			<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+						  			<input type="text" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 								</div>
 
 								<!--ZIPCODE-->
 								<div class="input-group" id="newAccountZip">
 						  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-						  			<input type="text" class="form-control" placeholder="Zipcode" aria-describedby="basic-addon1">
+						  			<input type="text" name="zipcode_user" class="form-control" placeholder="Zipcode" aria-describedby="basic-addon1">
 								</div>
 									
 								<!--NEW ACCOUNT BUTTON-->
@@ -115,5 +107,3 @@
 	</div>
 <!--END OF BACKGROUND VIDEO-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	</body>
-</html>
