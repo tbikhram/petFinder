@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
    foundLost: {
      type: DataTypes.BOOLEAN,
      allowNull: false,
-     len: [1]
+     
    },
 
    comments: {

@@ -42,8 +42,8 @@
 <!--END OF NAVBAR-->
 
 	<div class="foundPets"> 
-		{{#each foundPets}}
-			{{#if this.found}}
+		{{#each this.foundPets}}
+			
 				<!--<p class="yesFound">{{this.petName}}</p>-->
 
 				<div class="panel panel-primary">
@@ -55,7 +55,7 @@
   				</div>
 			</div>
 
-			{{/if}}
+			
 		{{/each}}
 	</div>
 
