@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes){
     {
         classMethods: {
             associate: function(models){
-                petFinder.hasMany(models.Post);
+                petFinder.hasMany(models.petId);
             }
         }
     });

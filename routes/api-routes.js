@@ -1,4 +1,6 @@
 var db = require ("../models");
+var passport = require('passport'),
+	 LocalStrategy = require('passport-local').Strategy;
 
 //route keys:
 //findAll
@@ -53,7 +55,7 @@ module.exports = function(app){
 	})
 
 //lostlist page
-	app.get('/post', function(request, response){
+	app.get('/lost', function(request, response){
 		db.petID.findAll({
 			where: {
 				found: false
@@ -66,11 +68,15 @@ module.exports = function(app){
 		})
 	})
 
-//account page ?????
+//account page: includes:[]
 	app.get('/account/:id', function(request, response) {
 		db.petFinder.findOne({
 			id: request.params.id
+		},
+		{ 
+		 includes: [db.petId]
 		}).then(function(user) {
+			console.log(user);
 			var handlebarObj = {
 				user: user
 			}
@@ -108,6 +114,43 @@ module.exports = function(app){
 		});
 	});
 
+
+
+
+// post to pet db "petFinderID" DOES NOT INCLUDE PETID
+
+	// app.post('newAccountPage/create', function(request, response){
+	// 	db.petFinder.create({
+	// 		userName: request.body.userName,
+	// 		email: request.body.email,
+	// 		password: request.body.password,
+	// 		zipcode_user: request.body.zipcode_user,
+	// 	}).then(function(res){
+	// 		response.redirect('accountPage');
+	// 	});
+	// });
+
+	// //put to pet db "petFinderID" DOES NOT INCLUDE PETID
+	// app.put('newAccountPage/update/:id', function(request, response){
+	// 	db.petFinder.update({
+	// 		userName: request.body.userName,
+	// 		email: request.body.email,
+	// 		password: request.body.password,
+	// 		zipcode_user: request.body.zipcode_user,
+	// 	}, {
+	// 		where:{
+	// 			id: request.params.id
+	// 		}
+	// 	}).then(function(res){
+	// 		response.redirect('accountPage');
+	// 	});
+	// });
+
+	//
+
+
+
+
 	//GET route to get all users
 	// app.get("/petFinder", function(req, res){
 	// 	db.petFinder.findAll({}).then(function(dbpetFinder){
@@ -126,26 +169,26 @@ module.exports = function(app){
 	// 	});
 	// });
 
-	//POST route for saving a new user
-	app.post("/petFinder", function(req, res){
-		db.petFinder.create(req.body).then(function(dbpetFinder){
-			res.json(dbpetFinder);
-		});
-	});
+// 	//POST route for saving a new user
+// 	app.post("/petFinder", function(req, res){
+// 		db.petFinder.create(req.body).then(function(dbpetFinder){
+// 			res.json(dbpetFinder);
+// 		});
+// 	});
 
-	//PUT route for updating a new user
+// 	//PUT route for updating a new user
 
-	app.put("/petFinder", function(req, res) {
-		db.petFinder.update(
-			req.body,
-			{
-				where: {
-					id: req.body.id
-				}
-			}).then(function(dbpetFinder) {
-				res.json(dbpetFinder);
-			});
-		});
-//END OF MODULE.EXPORTS
+// 	app.put("/petFinder", function(req, res) {
+// 		db.petFinder.update(
+// 			req.body,
+// 			{
+// 				where: {
+// 					id: req.body.id
+// 				}
+// 			}).then(function(dbpetFinder) {
+// 				res.json(dbpetFinder);
+// 			});
+// 		});
+// //END OF MODULE.EXPORTS
 
 };

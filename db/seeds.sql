@@ -4,8 +4,8 @@ INSERT INTO petFinder (user_name, email, password, zipcode_user, petID) VALUES (
 INSERT INTO petFinder (user_name, email, password, zipcode_user, petID) VALUES ('carl' , 'junior@gmail.com', 'carls', 91770 , 3);
 INSERT INTO petFinder (user_name, email, password, zipcode_user, petID) VALUES ('jack' , 'inthe@gmail.com', 'box', 90020 , 4);
 
-INSERT INTO petID (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('spot' , 'doverman', '../public/images/doverman.jpg', 1 , 0, 'lost this dog please return', 90012);
-INSERT INTO petID (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('cliff' , 'doverman', '../public/images/doverman.jpg', 0 , 1, 'lost this dog please return', 90012);
-INSERT INTO petID (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('jake' , 'doverman', '../public/images/doverman.jpg', 0 , 1, 'lost this dog please return', 90012);
-INSERT INTO petID (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('bryan' , 'doverman', '../public/images/doverman.jpg', 1 , 1, 'lost this dog please return', 90012);
-INSERT INTO petID (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('moe' , 'doverman', '../public/images/doverman.jpg', 0 , 0, 'lost this dog please return', 90012);
+INSERT INTO petId (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('spot' , 'doverman', '../public/images/dog.jpg', 1 , 0, 'lost this dog please return', 90012);
+INSERT INTO petId (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('cliff' , 'doverman', '../public/images/dog.jpg', 0 , 1, 'lost this dog please return', 90012);
+INSERT INTO petId (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('jake' , 'doverman', '../public/images/dog.jpg', 0 , 1, 'lost this dog please return', 90012);
+INSERT INTO petId (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('bryan' , 'doverman', '../public/images/dog.jpg', 1 , 1, 'lost this dog please return', 90012);
+INSERT INTO petId (petName, breed, petPic, animaltype, foundLost, comments, zipcode_pet) VALUES ('moe' , 'doverman', '../public/images/dog.jpg', 0 , 0, 'lost this dog please return', 90012);

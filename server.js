@@ -2,8 +2,8 @@ var express = require("express");
 var bodyParser = require ("body-Parser");
 var methodOverride = require ("method-override");
 var exphbs = require('express-handlebars');
-var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+var passport = require('passport'),
+	 LocalStrategy = require('passport-local').Strategy;
 
 //var Drift = require("drift-zoom");//new lib
 
@@ -14,7 +14,7 @@ var PORT = process.env.PORT || 3000;
 // requiring our models for sycncing
 
 var db = require("./models");
-var verify = require("verify.js");
+var verify = require("./verify.js");
 
 
 app.use(bodyParser.json());
