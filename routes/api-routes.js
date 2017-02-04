@@ -12,26 +12,6 @@ var passport = require('passport'),
 module.exports = function(app){
 
 
-//foundlist page
-	// app.get('/found', function(request, response){
-	// 	db.petFindeID.findAll({
-	// 		where: {
-	// 			found: true
-	// 		}
-	// 	}).then(function(foundPets){
-	// 		db.petFindeID.findAll({
-	// 			where: {
-	// 				found: true
-	// 			}
-	// 		}).then(function(foundPets){
-	// 			var handlebarObj = {
-	// 				foundPets: foundPets
-	// 			}
-	// 			response.render('foundList',foundPets);		
-	// 		})
-	// 	})
-	// })
-
 	//login
 
 	app.post('/login',
@@ -47,7 +27,7 @@ module.exports = function(app){
 				foundLost: true
 			}
 		}).then(function(foundPets){
-			console.log(foundPets);
+			//console.log(foundPets);
 			var handlebarObj = {
 				foundPets: foundPets
 
@@ -63,7 +43,7 @@ module.exports = function(app){
 				foundLost: false
 			}
 		}).then(function(foundPets){
-			console.log("lost: " + foundPets)
+			//console.log("lost: " + foundPets)
 			var handlebarObj = {
 				lostPets: foundPets
 			}
@@ -72,55 +52,63 @@ module.exports = function(app){
 	})
 
 //account page: includes:[]
-	app.get('/account/:id', function(request, response) {
-		db.petFinder.findOne({
-			id: request.params.id
-		},
-		{ 
-		 includes: [db.petId]
-		}).then(function(user) {
-			console.log(user);
-			var handlebarObj = {
-				user: user
-			}
-			res.render('/profile', handlebarObj);
-		})
-	});
+	// app.get('/account/:id', function(request, response) {
+	// 	db.petFinder.findOne({
+	// 		id: request.params.id
+	// 	},
+	// 	{ 
+	// 	 includes: [db.petId]
+	// 	}).then(function(user) {
+	// 		console.log(user);
+	// 		var handlebarObj = {
+	// 			user: user
+	// 		}
+	// 		res.render('/profile', handlebarObj);
+	// 	})
+	// });
 
+	//new post page
+ 	app.get("/petId", function(req, res){
+ 		res.render("foundLostForm")
+ 	})
+	// post to pet table "petFinderID" 
 
-	// post to account user db "petFinder" DOES NOT INCLUDE PETID
-
-	app.post('newAccountPage/create', function(request, response){
-		db.petFinder.create({
-			userName: request.body.userName,
-			email: request.body.email,
-			password: request.body.password,
-			zipcode_user: request.body.zipcode_user,
+	app.post('/petId/create', function(request, response){
+		db.petId.create({
+			petName: request.body.petName,
+			breed: request.body.breed,
+			petPic: request.body.petPic,
+			animaltype: request.body.animaltype,
+			foundLost: request.body.foundLost,
+			comments: request.body.comments,
+			zipcode_pet: request.body.zipcode_pet
 		}).then(function(res){
-			response.redirect('accountPage');
+			response.redirect('/petId');
 		});
 	});
 
-	//put to account user db "petFinder" DOES NOT INCLUDE PETID
-	app.put('newAccountPage/update/:id', function(request, response){
-		db.petFinder.update({
-			userName: request.body.userName,
-			email: request.body.email,
-			password: request.body.password,
-			zipcode_user: request.body.zipcode_user,
+	//put to pet table "petFinderID" 
+	app.put('/petId/update/:id', function(request, response){
+		db.petId.update({
+			petName: request.body.petName,
+			breed: request.body.breed,
+			petPic: request.body.petPic,
+			animaltype: request.body.animaltype,
+			foundLost: request.body.foundLost,
+			comments: request.body.comments,
+			zipcode_pet: request.body.zipcode_pet
 		}, {
 			where:{
 				id: request.params.id
 			}
 		}).then(function(res){
-			response.redirect('accountPage');
+			response.redirect('/petId');
 		});
 	});
 
 
 
-
-// post to pet db "petFinderID" DOES NOT INCLUDE PETID
+	// post to account user db "petFinder" 
 
 	// app.post('newAccountPage/create', function(request, response){
 	// 	db.petFinder.create({
@@ -133,7 +121,7 @@ module.exports = function(app){
 	// 	});
 	// });
 
-	// //put to pet db "petFinderID" DOES NOT INCLUDE PETID
+	// //put to account user db "petFinder" 
 	// app.put('newAccountPage/update/:id', function(request, response){
 	// 	db.petFinder.update({
 	// 		userName: request.body.userName,
@@ -149,49 +137,9 @@ module.exports = function(app){
 	// 	});
 	// });
 
-	//
 
 
 
-
-	//GET route to get all users
-	// app.get("/petFinder", function(req, res){
-	// 	db.petFinder.findAll({}).then(function(dbpetFinder){
-	// 		res.json(dbpetFinder);
-	// 	});
-	// });
-
-	//GET route to get single user
-	// app.get("/petFinder/:id", function(req, res){
-	// 	db.petFinder.findOne({
-	// 		where: {
-	// 			id: req.params.id
-	// 		}
-	// 	}).then(function(dbpetFinder){
-	// 		res.json(dbpetFinder);
-	// 	});
-	// });
-
-// 	//POST route for saving a new user
-// 	app.post("/petFinder", function(req, res){
-// 		db.petFinder.create(req.body).then(function(dbpetFinder){
-// 			res.json(dbpetFinder);
-// 		});
-// 	});
-
-// 	//PUT route for updating a new user
-
-// 	app.put("/petFinder", function(req, res) {
-// 		db.petFinder.update(
-// 			req.body,
-// 			{
-// 				where: {
-// 					id: req.body.id
-// 				}
-// 			}).then(function(dbpetFinder) {
-// 				res.json(dbpetFinder);
-// 			});
-// 		});
 // //END OF MODULE.EXPORTS
 
 };
