@@ -39,15 +39,15 @@ module.exports = function(sequelize, DataTypes){
      },
      
 
-},
+});
 
-    {
-        classMethods: {
-            associate: function(models){
-                petFinder.hasMany(models.petId);
-            }
-        }
-    });
+    // {
+    //     classMethods: {
+    //         associate: function(models){
+    //             petFinder.hasMany(models.petId);
+    //         }
+    //     }
+    // });
 
      return petFinder;
 
