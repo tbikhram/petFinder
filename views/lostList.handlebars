@@ -42,8 +42,8 @@
 <!--END OF NAVBAR-->
 
 	<div class="lostPets"> 
-		{{#each lostPets}}
-			{{#if this.lost}}
+		{{#each this.lostPets}}
+			
 				<!--<p class="notFound">{{this.petName}}</p>-->
 
 				<div class="panel panel-info">
@@ -54,7 +54,7 @@
   						Panel content
   				</div>
 			</div>
-			{{/if}}
+			
 		{{/each}}
 	</div>
 

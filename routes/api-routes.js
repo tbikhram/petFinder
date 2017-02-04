@@ -42,29 +42,32 @@ module.exports = function(app){
 
 //foundlist page
 	app.get('/found', function(request, response){
-		db.petID.findAll({
+		db.petId.findAll({
 			where: {
-				found: true
+				foundLost: true
 			}
 		}).then(function(foundPets){
+			console.log(foundPets);
 			var handlebarObj = {
 				foundPets: foundPets
+
 			}
-			response.render('foundlist', foundPets);
+			response.render('foundList', handlebarObj);
 		})
 	})
 
 //lostlist page
 	app.get('/lost', function(request, response){
-		db.petID.findAll({
+		db.petId.findAll({
 			where: {
-				found: false
+				foundLost: false
 			}
 		}).then(function(foundPets){
+			console.log("lost: " + foundPets)
 			var handlebarObj = {
 				lostPets: foundPets
 			}
-			response.render('lostList',foundPets);
+			response.render('lostList',handlebarObj);
 		})
 	})
 
