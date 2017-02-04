@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-module.exports = function(sequelize, DataTypes) {
-  var Authors = sequelize.define("Authors", {
-=======
->>>>>>> 765bfea3afc7c0d1f785788dfa1867997711b368
 
 module.exports = function(sequelize, DataTypes){
 	 var petFinder = sequelize.define("petFinder",{
