@@ -1,6 +1,7 @@
 
 module.exports = function(sequelize, DataTypes){
-	 var petFinder = sequelize.define("petFinder",{
+
+   var petFinder = sequelize.define("petFinder",{
 
         userName: {
             type: DataTypes.STRING,
@@ -36,22 +37,18 @@ module.exports = function(sequelize, DataTypes){
               validate: {
             len: [10]
          }    
-     },
-     
-
+     }, 
 });
 
-    {
-
-        classMethods: {
-            associate: function(models){
-                petFinder.hasMany(models.petId);
-            }
-        }
-    };
-
-
+    // {
+    //     classMethods: {
+    //         associate: function(models){
+    //             petFinder.hasMany(models.petId);
+    //         }
+    //     }
+    // });
 
      return petFinder;
+
 };
 

@@ -2,7 +2,17 @@ var db = require ("../models");
 var passport = require('passport'),
 	 LocalStrategy = require('passport-local').Strategy;
 
+//route keys:
+//findAll
+//findOne
+//create
+//update
+
+//petFinder = user
 module.exports = function(app){
+
+
+	//login
 
 	app.post('/login',
   passport.authenticate('local', { successRedirect: 'account',
@@ -58,7 +68,7 @@ module.exports = function(app){
 	// });
 
 	//new post page
- 	app.get("/petId", function(req, res){
+ 	app.get("/", function(req, res){
  		res.render("foundLostForm")
  	})
 	// post to pet table "petFinderID" 

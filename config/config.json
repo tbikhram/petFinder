@@ -2,12 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-<<<<<<< HEAD
-    "database": "spotFinder_db",
-=======
     "database": "petFinder_db",
-
->>>>>>> d145ff6ab2d4791f5409ed2ead1e68b556efdbdf
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
