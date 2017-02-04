@@ -68,7 +68,7 @@ module.exports = function(app){
 	// });
 
 	//new post page
- 	app.get("/petId", function(req, res){
+ 	app.get("/", function(req, res){
  		res.render("foundLostForm")
  	})
 	// post to pet table "petFinderID" 
