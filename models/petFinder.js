@@ -31,15 +31,15 @@ module.exports = function(sequelize, DataTypes){
         }
         },
         petID:{
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
               allowNull: false,
               validate: {
-            len: [1]
+            len: [10]
          }    
      },
      
 
-},
+});
 
     {
 
@@ -48,7 +48,8 @@ module.exports = function(sequelize, DataTypes){
                 petFinder.hasMany(models.petId);
             }
         }
-    });
+    };
+
 
 
      return petFinder;

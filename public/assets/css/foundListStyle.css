@@ -3,3 +3,7 @@ body{
 	background-image: url("../images/stardust.png");
 
 }
+
+p , h3{
+	text-align: center;
+}
