@@ -16,7 +16,7 @@ var PORT = process.env.PORT || 3000;
 var db = require("./models");
 var verify = require("./verify.js");
 
-
+app.use(methodOverride("_method"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());

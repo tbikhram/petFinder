@@ -1,24 +1,17 @@
 var db = require ("../models");
-var passport = require('passport'),
-	 LocalStrategy = require('passport-local').Strategy;
+//var passport = require('passport'),
+	 //LocalStrategy = require('passport-local').Strategy;
 
-//route keys:
-//findAll
-//findOne
-//create
-//update
-
-//petFinder = user
 module.exports = function(app){
 
 
 	//login
 
-	app.post('/login',
-  passport.authenticate('local', { successRedirect: 'account',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
-);
+	// app.post('/login',
+ //  passport.authenticate('local', { successRedirect: 'account',
+ //                                   failureRedirect: '/login',
+ //                                   failureFlash: true })
+//);
 
 //foundlist page
 	app.get('/found', function(request, response){
@@ -70,11 +63,14 @@ module.exports = function(app){
 	//new post page
  	app.get("/", function(req, res){
  		res.render("foundLostForm")
- 	})
+ 	});
 	// post to pet table "petFinderID" 
 
 	app.post('/petId/create', function(request, response){
+		console.log(request.body);
+		console.log('hi Louis');
 		db.petId.create({
+
 			petName: request.body.petName,
 			breed: request.body.breed,
 			petPic: request.body.petPic,
@@ -82,9 +78,13 @@ module.exports = function(app){
 			foundLost: request.body.foundLost,
 			comments: request.body.comments,
 			zipcode_pet: request.body.zipcode_pet
+
 		}).then(function(res){
-			response.redirect('/petId');
+			response.redirect('/');
+		}).catch(function(error){
+			console.log(error);
 		});
+
 	});
 
 	//put to pet table "petFinderID" 
@@ -102,7 +102,7 @@ module.exports = function(app){
 				id: request.params.id
 			}
 		}).then(function(res){
-			response.redirect('/petId');
+			response.redirect('/');
 		});
 	});
 

@@ -38,14 +38,13 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 <!--END OF NAVBAR-->
-<!--END OF NAVBAR-->
-<!--END OF NAVBAR-->
+
 <!--SURVEY-->
 <div class="container" id="newPet">
 	<div class="row">
 		<div class="col-md-11">
 			<div class="pull-right">
-			<form action="petId/create" method="POST">
+			<form action="/petId/create" method="POST">
 				
 				<div class="form-group">
 				<h2>Tell Us Some Details:</h2>
@@ -55,14 +54,14 @@
 
 				<div class="form-group">
 				  <label for="usr">Breed (If Tag):</label>
-				  <input type="text" class="form-control" id="usr" placeholder="French Bulldog" name="breed">
+				  <input type="text" class="form-control" id="breed" placeholder="French Bulldog" name="breed">
 				</div>
 
-				<form action="demo_form.asp"> <!--UPLOAD IMAGE-->
+			<!--UPLOAD IMAGE-->
 				  <label for="usr">Choose an Image:</label>
 				  <input type="file" name="petPic" accept="image/*">
 				  <!--<input type="submit">-->
-				</form>
+				
 
 				<label for="usr">The Animal is a:</label>
 				<div class="checkbox-inline">
@@ -97,10 +96,13 @@
 				</div>
 				
 			
-				<div class="btn-group" action="petId/create" method="POST">
+				<div class="btn-group" >
 
-			  		<button type="submit" class="btn btn-primary">Post Pet</button>
+			  		<button type="submit" class="btn btn-primary" >Post Pet</button>
+
 				</div>
+
+				</form>
 			</div>
 		</div>
 	</div>
